@@ -1,0 +1,1 @@
+// pass table info through the orm functions here 
