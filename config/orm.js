@@ -70,6 +70,14 @@ var orm = {
       cb(result);
     });
   },
-}
+  remove: function(table, col, val, cb) {
+    connection.query("DELETE FROM ?? WHERE ?? = ?", [table, col, val], function(err, data) {
+      if(err)
+        throw err;
+      console.log(data);
+      return cb(data);
+    });
+  }
+};
   
 module.exports = orm;
