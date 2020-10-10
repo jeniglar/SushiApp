@@ -1,9 +1,9 @@
 
 $(function() {
     $(".remove-sushi").on("click", function() {
-      const catId = $(this).attr("data-id");
+      const sushiId = $(this).attr("data-id");
   
-      console.log(catId);
+      console.log(sushiId);
   
       $.ajax("/api/sushi/" + sushiId, {
         method: "DELETE"
@@ -37,7 +37,7 @@ $(function() {
       event.preventDefault();
       var newSushi = {
         name: $("#ca").val().trim(),
-        devoured: $("[name=sleepy]:checked").val().trim()
+        devoured: $("[name=devoured]:checked").val().trim()
       };
   
       $.ajax("/api/sushi", {
